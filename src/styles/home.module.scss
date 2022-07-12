@@ -1,0 +1,15 @@
+.mainContent {
+  flex: 1;
+}
+
+.mainGrid {
+  height: 100%;
+}
+
+.sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-clip: content-box;
+  margin-bottom: 80px;
+}
