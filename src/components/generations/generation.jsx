@@ -1,12 +1,13 @@
 import { Grid, Typography } from '@mui/material';
 import Image from 'next/image';
 import useGeneration from '../../hooks/useGeneration';
+import styles from './generation.module.scss';
 
 const Generation = ({ number }) => {
     const { handleClick } = useGeneration();
 
     return (
-        <Grid item xs={12} sm={6} md={4} onClick={() => handleClick(number)}>
+        <Grid item xs={12} sm={6} md={4} onClick={() => handleClick(number)} className={styles.item}>
             <Image
                 src={`/images/gen${number}.png`}
                 width={600}
