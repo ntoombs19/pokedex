@@ -90,16 +90,14 @@ const Content = ({ pokemon }) => {
                                                 pokemon_v2_ability: ability,
                                             },
                                             index,
-                                        ) => {
-                                            return (
+                                        ) => (
                                                 <li key={index}>
                                                     {ability.name}
                                                     {is_hidden
                                                         ? ' - (hidden)'
                                                         : null}
                                                 </li>
-                                            );
-                                        },
+                                            ),
                                     )}
                                 </ol>
                             </TableCell>

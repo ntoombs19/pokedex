@@ -1,22 +1,21 @@
-import useList from "../hooks/useList";
-import Pokemon from "./listItem";
-import PokemonLoading from "./listLoading";
-import {Alert, Grid, Pagination, TextField} from "@mui/material";
+import useSearch from '../../hooks/useSearch';
+import { TextField } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
-const pokemonList = () => {
-    const {
-        data,
-        loading,
-        error,
-        page,
-        handleChange
-    } = usePokemonSearch();
+const Search = () => {
+    const { debouncedHandleChange } = useSearch();
+
+    const theme = useTheme();
 
     return (
-        <>
-            <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-        </>
-    )
+        <TextField
+            sx={{ bgcolor: theme.palette.background.default }}
+            id="outlined-basic"
+            label="Search"
+            variant="filled"
+            onChange={debouncedHandleChange}
+        />
+    );
 };
 
-export default pokemonList;
+export default Search;
