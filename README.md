@@ -1,3 +1,5 @@
+Hosted on Vercel: https://pokedex-ntoombs19.vercel.app/
+
 ### Running the dev server
 ```bash
 npm run dev
