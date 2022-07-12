@@ -14,6 +14,7 @@ const Search = () => {
             label="Search"
             variant="filled"
             onChange={debouncedHandleChange}
+            aria-label="Search for Pokémon"
         />
     );
 };
