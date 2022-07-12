@@ -14,6 +14,8 @@ As a Pokémaster, I want a searchable index of pokémon so that I can view speci
 
 ### Roadmap
 - Add TypeScript
+- Add better keyboard navigation for accessibility
+- Add PWA features with cache warming for full offline support of API data
 - Build better API endpoint with tRPC
 - Add Layered filtering to sidebar
 - Add URL navigation
