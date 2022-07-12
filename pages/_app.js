@@ -9,6 +9,7 @@ import {
 import { onError } from '@apollo/client/link/error';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Provider as AppProvider } from 'react-redux';
+import { StyledEngineProvider } from '@mui/material/styles';
 import { store } from '../src/redux/store';
 
 const errorLink = onError(({ graphQLErrors, networkErrors }) => {
@@ -126,11 +127,13 @@ const theme = createTheme({
 function MyApp({ Component, pageProps }) {
     return (
         <ApolloProvider client={client}>
-            <ThemeProvider theme={theme}>
-                <AppProvider store={store}>
-                    <Component {...pageProps} />
-                </AppProvider>
-            </ThemeProvider>
+            <StyledEngineProvider injectFirst>
+                <ThemeProvider theme={theme}>
+                    <AppProvider store={store}>
+                        <Component {...pageProps} />
+                    </AppProvider>
+                </ThemeProvider>
+            </StyledEngineProvider>
         </ApolloProvider>
     );
 }
