@@ -10,7 +10,10 @@ const useDetails = () => {
 
     const { open, id } = useSelector((state) => state.details);
 
-    const handleOpen = (id) => {
+    const handleOpen = (event, id) => {
+        if (event.code && event.key !== 'Enter' && event.code !== 'Space')
+            return;
+
         dispatch(setOpen(true));
         dispatch(setId(id));
     };

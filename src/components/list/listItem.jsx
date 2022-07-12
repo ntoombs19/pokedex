@@ -24,7 +24,7 @@ const ListItem = ({ pokemon }) => {
 
     return (
         <Grid item xs={12} sm={6} md={4} lg={3}>
-            <Card className={styles.card} onClick={() => handleOpen(id)}>
+            <Card className={styles.card} onClick={(event) => handleOpen(event, id)} onKeyUp={(event) => handleOpen(event, id)} tabIndex={0}>
                 <CardHeader
                     className={styles.header}
                     title={name}

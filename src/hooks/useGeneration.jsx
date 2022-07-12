@@ -4,13 +4,13 @@ import { useDispatch } from 'react-redux';
 
 export default function useGeneration() {
     const dispatch = useDispatch();
-    const handleClick = useCallback(
-        (number) => {
-            dispatch(setGeneration(number));
-            dispatch(setPageNumber(1));
-        },
-        [dispatch],
-    );
+    const handleClick = (event, number) => {
+        if (event.code && event.key !== 'Enter' && event.code !== 'Space')
+            return;
+
+        dispatch(setGeneration(number));
+        dispatch(setPageNumber(1));
+    };
 
     return {
         handleClick,
